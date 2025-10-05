@@ -1,0 +1,43 @@
+{
+  "koi_score": "KOI score",
+  "koi_period": "Orbital period",
+  "koi_time0bk": "Transit epoch",
+  "koi_duration": "Transit duration",
+  "koi_depth": "Transit depth",
+  "koi_model_snr": "Model SNR",
+  "koi_impact": "Impact parameter",
+  "koi_dor": "a/R*",
+  "koi_ror": "Rp/R*",
+
+  "koi_prad": "Planet radius",
+  "koi_sma": "Semi-major axis",
+  "koi_insol": "Insolation",
+  "koi_teq": "Equilibrium temp",
+
+  "koi_kepmag": "Kepler mag",
+
+  "koi_steff": "Stellar Teff",
+  "koi_slogg": "Stellar log g",
+  "koi_srad": "Stellar radius",
+  "koi_smass": "Stellar mass",
+  "koi_srho": "Stellar density",
+
+  "koi_num_transits": "Transit count",
+  "koi_tce_plnt_num": "Planet #",
+  "koi_quarters": "Quarters",
+
+  "rrmscdpp01p5": "CDPP 1.5h",
+  "rrmscdpp02p0": "CDPP 2.0h",
+  "rrmscdpp03p0": "CDPP 3.0h",
+  "rrmscdpp06p0": "CDPP 6.0h",
+  "rrmscdpp12p0": "CDPP 12.0h",
+  "rrmscdpp24p0": "CDPP 24.0h",
+
+  "av_pred_class": "AV class",
+  "av_prob": "AV prob",
+
+  "koi_fpflag_nt": "Flag not transit-like",
+  "koi_fpflag_ss": "Flag stellar eclipse",
+  "koi_fpflag_ec": "Flag centroid offset",
+  "koi_fpflag_co": "Flag ephemeris match"
+}
