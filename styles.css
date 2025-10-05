@@ -1,90 +1,114 @@
-/* General Layout */
 body {
-    background-color: #121212;
-    color: #EAEAEA;
+    background-color: #0A0A0A; 
+    color: #EAEAEA; 
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
 .app-title {
-    font-size: 2.5rem;
-    color: #00bcd4;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: 3rem; 
+    color: #00BCD4; 
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px; 
+    text-shadow: 0 2px 6px rgba(0, 188, 212, 0.5); 
 }
 
 .app-caption {
     font-size: 1.1rem;
-    color: #b0bec5;
+    color: #B0BEC5; 
     margin-bottom: 30px;
+    font-weight: 400;
 }
 
-/* Sidebar */
 .sidebar-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #FF4081;
-    padding: 10px;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #FF4081; 
+    padding: 12px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; 
 }
 
-/* Form and Buttons */
 .stButton button {
-    background-color: #FF4081;
+    background-color: #FF4081; 
     color: white;
-    border-radius: 5px;
+    border-radius: 6px; 
     padding: 12px 30px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    border: none;
+    box-shadow: 0 3px 8px rgba(255, 64, 129, 0.3); 
 }
 
 .stButton button:hover {
-    background-color: #D500F9;
+    background-color: #D500F9; 
+    transform: translateY(-2px); 
 }
 
-/* Text Inputs, Select Boxes, Sliders */
 .stTextInput, .stSelectbox {
-    background-color: #333333;
-    border-radius: 5px;
+    background-color: #2C2C2C; 
+    border-radius: 8px; 
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .stTextInput:focus, .stSelectbox:focus {
-    border: 2px solid #FF4081;
+    border: 2px solid #FF4081; 
+    box-shadow: 0 0 6px rgba(255, 64, 129, 0.4); 
 }
 
-/* Form Spacing */
 .stColumn {
-    padding: 10px;
+    padding: 15px;
+    margin: 10px 0;
 }
 
-/* Expander */
 .stExpanderHeader {
-    background-color: #FF4081;
+    background-color: #333333; 
     color: white;
     border-radius: 8px;
     padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+    transition: background-color 0.2s ease;
 }
 
 .stExpanderHeader:hover {
-    background-color: #D500F9;
+    background-color: #444444; 
 }
 
-/* Result highlights */
 .candidate {
-    color: #66BB6A;
+    color: #66BB6A; 
     font-size: 2rem;
     font-weight: 700;
 }
 
 .confirmed {
-    color: #FF5252;
+    color: #FF5252; 
     font-size: 2rem;
     font-weight: 700;
 }
 
 .stMetric {
-    margin-top: 20px;
+    margin-top: 25px;
+    color: #E6E6E6;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    animation: fadeIn 0.4s ease-in-out;
 }
