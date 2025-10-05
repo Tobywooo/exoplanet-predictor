@@ -108,25 +108,25 @@ with st.form("koi_form"):
         target_col = left if i % 2 == 0 else right
         label = pretty(c)
         
-        with target_col:
-            if c in num_cols:
-                # Text input for numeric values
-                val = st.text_input(label, placeholder="numeric (leave blank for missing)").strip()
-                inputs[c] = float(val) if val else None
-            elif c in cat_cols:
-                # Dropdown selectbox for categorical inputs
-                options = catvals.get(c, [])
-                if options:
-                    sel = st.selectbox(label, ["(leave blank)"] + options, index=0)
-                    inputs[c] = None if sel == "(leave blank)" else sel
+        # Add checkbox for each input to toggle visibility
+        show_feature = st.checkbox(f"Show {label}", value=True, key=f"show_{c}")
+        
+        if show_feature:  # Only show input fields if the checkbox is checked
+            with target_col:
+                if c in num_cols:
+                    val = st.text_input(label, placeholder="numeric (leave blank for missing)").strip()
+                    inputs[c] = float(val) if val else None
+                elif c in cat_cols:
+                    options = catvals.get(c, [])
+                    if options:
+                        sel = st.selectbox(label, ["(leave blank)"] + options, index=0)
+                        inputs[c] = None if sel == "(leave blank)" else sel
+                    else:
+                        txt = st.text_input(label, placeholder="text (optional)").strip()
+                        inputs[c] = txt or None
                 else:
-                    # Text input if no predefined categories
-                    txt = st.text_input(label, placeholder="text (optional)").strip()
+                    txt = st.text_input(label, placeholder="value (optional)").strip()
                     inputs[c] = txt or None
-            else:
-                # General text input
-                txt = st.text_input(label, placeholder="value (optional)").strip()
-                inputs[c] = txt or None
 
     # Submit button
     submitted = st.form_submit_button("Predict", use_container_width=True)
