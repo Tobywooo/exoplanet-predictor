@@ -1,0 +1,90 @@
+/* General Layout */
+body {
+    background-color: #121212;
+    color: #EAEAEA;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.app-title {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.app-caption {
+    font-size: 1.1rem;
+    color: #b0bec5;
+    margin-bottom: 30px;
+}
+
+/* Sidebar */
+.sidebar-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FF4081;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Form and Buttons */
+.stButton button {
+    background-color: #FF4081;
+    color: white;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.stButton button:hover {
+    background-color: #D500F9;
+}
+
+/* Text Inputs, Select Boxes, Sliders */
+.stTextInput, .stSelectbox {
+    background-color: #333333;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.stTextInput:focus, .stSelectbox:focus {
+    border: 2px solid #FF4081;
+}
+
+/* Form Spacing */
+.stColumn {
+    padding: 10px;
+}
+
+/* Expander */
+.stExpanderHeader {
+    background-color: #FF4081;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.stExpanderHeader:hover {
+    background-color: #D500F9;
+}
+
+/* Result highlights */
+.candidate {
+    color: #66BB6A;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.confirmed {
+    color: #FF5252;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stMetric {
+    margin-top: 20px;
+}
