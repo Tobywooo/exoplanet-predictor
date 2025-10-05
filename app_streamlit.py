@@ -20,18 +20,31 @@ st.title("🪐 Exoplanet Candidate Predictor")
 st.caption("Enter KOI-like parameters to estimate whether a target is a candidate.")
 
 # ---------- Path helpers (prefer current folder; fall back to models/) ----------
-HERE = Path(__file__).parent.resolve()
-def smart_path(filename: str) -> str:
-    # Prefer file in the same directory as this script
-    p = HERE / filename
-    if p.exists():
-        return str(p)
-    # Fallback to models/ if someone keeps that structure
-    p2 = HERE / "models" / filename
-    return str(p2) if p2.exists() else str(p)
+# HERE = Path(__file__).parent.resolve()
+# def smart_path(filename: str) -> str:
+#     # Prefer file in the same directory as this script
+#     p = HERE / filename
+#     if p.exists():
+#         return str(p)
+#     # Fallback to models/ if someone keeps that structure
+#     p2 = HERE / "models" / filename
+#     return str(p2) if p2.exists() else str(p)
 
-# ---------- Sidebar: model paths, threshold, labels mapping ----------
-model_path  = st.sidebar.text_input("Model path", smart_path("rf_pipeline.joblib"))
+# # ---------- Sidebar: model paths, threshold, labels mapping ----------
+# model_path  = st.sidebar.text_input("Model path", smart_path("rf_pipeline.joblib"))
+# schema_path = st.sidebar.text_input("Schema path", smart_path("koi_schema.json"))
+# catvals_path= st.sidebar.text_input("Categorical values path", smart_path("categorical_values.json"))
+from pathlib import Path
+HERE = Path(__file__).parent.resolve()
+def smart_path(name: str) -> str:
+    p = HERE / name
+    if p.exists():
+        return str(p)          # prefer files next to the app
+    p2 = HERE / "models" / name
+    return str(p2)             # fallback to models/
+
+# replace your sidebar defaults with:
+model_path  = st.sidebar.text_input("Model path",  smart_path("rf_pipeline.joblib"))
 schema_path = st.sidebar.text_input("Schema path", smart_path("koi_schema.json"))
 catvals_path= st.sidebar.text_input("Categorical values path", smart_path("categorical_values.json"))
 labels_path = st.sidebar.text_input("Labels mapping (optional JSON)", smart_path("labels.json"))
@@ -158,3 +171,4 @@ with st.expander("About this model"):
         "- The decision threshold can be adjusted in the sidebar.\n"
         "- Batch and single predictions use the same saved pipeline."
     )
+
